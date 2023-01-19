@@ -12,7 +12,7 @@
         android:id="@+id/btnToC"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="to C"
+        android:text="往C"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,9 +23,20 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="62dp"
+        android:layout_marginEnd="28dp"
         android:text="B"
         android:textSize="48sp"
-        tools:layout_editor_absoluteX="193dp"
-        tools:layout_editor_absoluteY="233dp" />
+        app:layout_constraintEnd_toEndOf="@+id/btnBackA"
+        app:layout_constraintTop_toBottomOf="@+id/btnBackA" />
+
+    <Button
+        android:id="@+id/btnBackA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="34dp"
+        android:text="回到A"
+        app:layout_constraintEnd_toEndOf="@+id/btnToC"
+        app:layout_constraintTop_toBottomOf="@+id/btnToC" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

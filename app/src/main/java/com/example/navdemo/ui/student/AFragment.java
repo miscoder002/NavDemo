@@ -2,7 +2,11 @@ package com.example.navdemo.ui.student;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,6 +23,7 @@ import com.example.navdemo.databinding.FragmentABinding;
 public class AFragment extends Fragment {
 
     FragmentABinding binding;
+    NavController navController;
 
     public AFragment() {
         // Required empty public constructor
@@ -42,6 +47,19 @@ public class AFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         binding = FragmentABinding.inflate(inflater, container, false);
+        binding.btnToB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.action_AFragment_to_BFragment);
+            }
+        });
         return binding.getRoot();
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        navController = Navigation.findNavController(view);
+
     }
 }
