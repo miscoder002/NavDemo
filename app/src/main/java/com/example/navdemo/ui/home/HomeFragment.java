@@ -49,7 +49,7 @@ public class HomeFragment extends Fragment {
                 } else {
                     AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                     builder.setTitle("身分異常")
-                            .setMessage("請確認您的身分 或是與 App管理人員聯絡")
+                            .setMessage("請確認您的身分\r\n 或是與 App管理人員聯絡")
                             .setPositiveButton("知道了", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {

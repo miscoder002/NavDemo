@@ -58,10 +58,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="18dp"
+        android:layout_marginEnd="19dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="日"
-        app:layout_constraintStart_toStartOf="@+id/txtMonth"
+        app:layout_constraintEnd_toStartOf="@+id/btnSetTime"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtMonth" />
 
     <Button
@@ -74,5 +77,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/txtMonth"
         app:layout_constraintTop_toTopOf="@+id/txtMonth" />
+
+    <Button
+        android:id="@+id/btnSetTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="8dp"
+        android:text="選擇時間"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txtDay"
+        app:layout_constraintTop_toBottomOf="@+id/btnSetDate" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

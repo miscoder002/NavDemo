@@ -1,6 +1,7 @@
 package com.example.navdemo.ui.student;
 
 import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -13,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.DatePicker;
+import android.widget.TimePicker;
 
 import com.example.navdemo.R;
 import com.example.navdemo.databinding.FragmentABinding;
@@ -62,9 +64,9 @@ public class AFragment extends Fragment {
             public void onClick(View v) {
                 // DatePickerDialog
                 Calendar calendar = Calendar.getInstance(); //取得 Java內建的 日曆物件
-                int y = calendar.YEAR;
-                int m = calendar.MONTH;
-                int d = calendar.DATE;
+                int y = calendar.get( calendar.YEAR );
+                int m = calendar.get( calendar.MONTH );
+                int d = calendar.get( calendar.DATE );
                 DatePickerDialog dialog = new DatePickerDialog(getActivity(), new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
@@ -74,9 +76,29 @@ public class AFragment extends Fragment {
                     }
                 } , y, m, d);
                 dialog.show();
+
+
+            }
+        });
+
+        binding.btnSetTime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Calendar calendar = Calendar.getInstance();
+                TimePickerDialog dialog2 = new TimePickerDialog(
+                        getActivity(),
+                        new TimePickerDialog.OnTimeSetListener() {
+                            @Override
+                            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+
+                            }
+                        }, calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE),true
+                );
+                dialog2.show();
             }
         });
         return binding.getRoot();
+
     }
 
     @Override
