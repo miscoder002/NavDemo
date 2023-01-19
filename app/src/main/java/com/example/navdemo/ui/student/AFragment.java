@@ -1,5 +1,6 @@
 package com.example.navdemo.ui.student;
 
+import android.app.DatePickerDialog;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -11,9 +12,12 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.DatePicker;
 
 import com.example.navdemo.R;
 import com.example.navdemo.databinding.FragmentABinding;
+
+import java.util.Calendar;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -51,6 +55,25 @@ public class AFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 navController.navigate(R.id.action_AFragment_to_BFragment);
+            }
+        });
+        binding.btnSetDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // DatePickerDialog
+                Calendar calendar = Calendar.getInstance(); //取得 Java內建的 日曆物件
+                int y = calendar.YEAR;
+                int m = calendar.MONTH;
+                int d = calendar.DATE;
+                DatePickerDialog dialog = new DatePickerDialog(getActivity(), new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                            binding.txtYear.setText( String.valueOf(year) );
+                            binding.txtMonth.setText(String.valueOf(month) );
+                            binding.txtDay.setText(String.valueOf(dayOfMonth) );
+                    }
+                } , y, m, d);
+                dialog.show();
             }
         });
         return binding.getRoot();

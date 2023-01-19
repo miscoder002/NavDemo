@@ -28,4 +28,51 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <EditText
+        android:id="@+id/txtYear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginBottom="233dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="年"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/txtMonth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="21dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="月"
+        app:layout_constraintEnd_toStartOf="@+id/btnSetDate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtYear" />
+
+    <EditText
+        android:id="@+id/txtDay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="日"
+        app:layout_constraintStart_toStartOf="@+id/txtMonth"
+        app:layout_constraintTop_toBottomOf="@+id/txtMonth" />
+
+    <Button
+        android:id="@+id/btnSetDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="1dp"
+        android:text="選擇預約日期"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txtMonth"
+        app:layout_constraintTop_toTopOf="@+id/txtMonth" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
