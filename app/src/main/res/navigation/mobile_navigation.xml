@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.navdemo.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_AFragment"
+            app:destination="@id/AFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/AFragment"
+        android:name="com.example.navdemo.ui.student.AFragment"
+        android:label="fragment_a"
+        tools:layout="@layout/fragment_a" >
+        <action
+            android:id="@+id/action_AFragment_to_BFragment"
+            app:destination="@id/BFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/BFragment"
+        android:name="com.example.navdemo.ui.student.BFragment"
+        android:label="fragment_b"
+        tools:layout="@layout/fragment_b" >
+        <action
+            android:id="@+id/action_BFragment_to_CFragment"
+            app:destination="@id/CFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/CFragment"
+        android:name="com.example.navdemo.ui.student.CFragment"
+        android:label="fragment_c"
+        tools:layout="@layout/fragment_c" />
+
+</navigation>
